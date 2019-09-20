@@ -6,12 +6,6 @@
 
 * The whole project contains 2 parts. Using python to build a game and training the game with Deep Reinforcement Learning.
 
-## Boom!! Super Cool! It works!
-### Pre_train (here is a Gif) How Silly the Green Heroes are!
-![image](https://github.com/GuoshenLi/Deep-Reinforcement-Learning-for-the-Fighter-Theater/blob/master/pre_train.gif)
-
-### Post_train (here is also a Gif) The Green Heroes Can Win the Game by Fighting the Red Heroes!
-![image](https://github.com/GuoshenLi/Deep-Reinforcement-Learning-for-the-Fighter-Theater/blob/master/post_train.gif)
 
 ## Installation Dependencies
 * pytmx 3.21.5
@@ -38,44 +32,31 @@ cd Fighter
 python game
 ```
 
-## How to reproduce the pre and post_train Gif?
-* **Unzip the zip file Fighter_DQN.zip first**
+## How to train the network?
+* **Unzip the zip file Fighter_DQN_2015Nature.zip first**
 
-* If you want to reproduce the pre_train_model (The silly green heroes), make sure you set the parameters in the DQN_fighter file as follows and **Do not import any saved networks!!**
+* Train the network with the following parameters **Do not import any saved networks!!**
 ```
 OBSERVE = 100000. # timesteps to observe before training
 EXPLORE = 1000000. # frames over which to anneal epsilon
 FINAL_EPSILON = 0.0001 # final value of epsilon which is 0.0001
 INITIAL_EPSILON = 1 # starting value of epsilon which is 1
 ```
-* If you want to reproduce the post_train_model (The successful green heroes), make sure you set the parameters in the DQN_fighter file as follows and **Import the saved networks!!**
-```
-OBSERVE = 100000. # timesteps to observe before training
-EXPLORE = 1000000. # frames over which to anneal epsilon
-FINAL_EPSILON = 0 
-INITIAL_EPSILON = 0 
-```
-**Import the saved networks like this in the DQN_fighter file!!**
-```
-checkpoint = tf.train.get_checkpoint_state("saved_networks")
-if checkpoint and checkpoint.model_checkpoint_path:
-    saver.restore(sess, checkpoint.model_checkpoint_path)   
-    print("Successfully loaded:", checkpoint.model_checkpoint_path)
-else:
-    print("Could not find old network weights")
-```
+
+* **After 2000000 iterations, it will automatically show two diagrams of the Average Reward and the Max Q_value history, and it will also store the relative data the two diagrams into mat file to reuse it later.**
+
+* **The Average Reward of one game epoch equals to total reward of the game epoch divided by total time step of that epoch!!**
 
 ## Future Work
 **I will update some details about the code and make some adjustments to optimize it if I have time.**
 
-* Ideas1: Comparing the performence of the 2 versions of DQN in 2013 NIPS and 2015 Nature (with or without fixed Q target) 
-* Ideas2: Utilizing Double DQN to see how it can solve the problem of overestimation of Q value by traditional DQNs. 
+* I have already uploaded the 2015 Nature DQN and Double DQN for training, **the 2013 NIPS DQN will be uploaded later!**
+* Ideas2: Utilizing Duelling DQN or prioritized experience replay to see how it can improve the performance of DQNs.
 
 **But it all depends on time!!!**
 
 ## Update Logs
-2019.9.1 China
-2019.8.30 China
+2019.9.20 China
 
 
 ## Warnings
