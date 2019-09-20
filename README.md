@@ -27,7 +27,7 @@
 ## How to train the network?
 * **Unzip the zip file Fighter_DQN_2015Nature.zip or Fighter_Double_DQN first**
 
-* Train the network with the following parameters **Do not import any saved networks!!**
+* Train the network with the following parameters and **Do not import any saved networks!!**
 ```
 OBSERVE = 100000. # timesteps to observe before training
 EXPLORE = 1000000. # frames over which to anneal epsilon
@@ -41,7 +41,7 @@ cd Fighter
 python game
 ```
 
-* **After 2000000 iterations, it will automatically show two diagrams of the Average Reward and the Max Q_value history, and it will also store the relative data the two diagrams into mat file to reuse it later.**
+* **After 2000000 iterations, it will automatically show two diagrams of the Average Reward and the Max Q_value history, and it will also store the relative data of the two diagrams into mat file to reuse it later.**
 
 * **The Average Reward of one game epoch equals to total reward of the game epoch divided by total time step of that epoch!!**
 
