@@ -23,17 +23,9 @@
 * I run my code on Mac, so if you have any problem in doing so, feel free to contact me.
 
 
-## How to Run?
-* **Unzip the zip file Fighter.zip first**
-* Note: I recommend to run in the terminal and make sure you install all the dependencies before running!
-
-```
-cd Fighter
-python game
-```
 
 ## How to train the network?
-* **Unzip the zip file Fighter_DQN_2015Nature.zip first**
+* **Unzip the zip file Fighter_DQN_2015Nature.zip or Fighter_Double_DQN first**
 
 * Train the network with the following parameters **Do not import any saved networks!!**
 ```
@@ -41,6 +33,12 @@ OBSERVE = 100000. # timesteps to observe before training
 EXPLORE = 1000000. # frames over which to anneal epsilon
 FINAL_EPSILON = 0.0001 # final value of epsilon which is 0.0001
 INITIAL_EPSILON = 1 # starting value of epsilon which is 1
+```
+
+* Use the following command!
+```
+cd Fighter
+python game
 ```
 
 * **After 2000000 iterations, it will automatically show two diagrams of the Average Reward and the Max Q_value history, and it will also store the relative data the two diagrams into mat file to reuse it later.**
